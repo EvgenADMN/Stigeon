@@ -1,0 +1,98 @@
+.main-header {
+    background-color: #f3f3ff;
+    height: 7vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid #000 1.5px;
+}
+
+.main-header .logo {
+    height: 7vh;
+    width: 15vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-header .logo-img {
+    max-height: 90%;
+    max-width: 90%;
+    pointer-events: none;
+}
+
+.main-header .button-bar {
+    height: 7vh;
+    width: 64vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-header .main-header-button {
+    height: 5vh;
+    width: 10vw;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #4d4a8f;
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .3s;
+}
+
+.main-header .main-header-button:hover {
+    scale: 1.05;
+}
+
+.main-header .admin-button-bar {
+    height: 7vh;
+    width: 12vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-header .admin-button{
+    height: 5vh;
+    width: 7vw;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #4d4a8f;
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .3s;
+}
+
+.main-header .admin-button:hover {
+    scale: 1.05;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: #4d4a8f;
+  font-weight: bold;
+  min-width: 8vw;
+  width: 10vw;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+    background-color: #403d76
+}

@@ -1,0 +1,86 @@
+{% extends 'patterns/layout.html' %}
+
+{% block title %} Шаблоны {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="patterns">
+    <div class="edit">
+        <datalist id="employee">
+            {% for employee in employees_list %}
+                <option value="{{ employee }}"></option>
+            {% endfor %}
+        </datalist>
+
+        <datalist id="chosen-devices-datalist">
+
+        </datalist>
+
+        <h2>Редактировать шаблон</h2>
+
+        <form method="post">
+        {% csrf_token %}
+        <button class="new-pattern">Сохранить</button>
+        <div class="properties">
+            <div class="properties-name">
+                <input type="hidden" name="editable-pattern" value="{{ Pattern.id }}">
+                <p>Название</p>
+                <input type="text" autocomplete="off" class="name" name="name" value="{{ Pattern.name }}" required>
+                <p>Описание</p>
+                <textarea name="description" class="description"
+                          placeholder="Добавьте описание шаблона. Можно оставить пустым...">{{ Pattern.description }}</textarea>
+            </div>
+            <div class="properties-device">
+                <p>Устройство</p>
+                <div class="choose-device">
+                    <select id="device_id" class="device_id" name="device_id">
+                        <option disabled selected id="disabled">Выберите считыватель</option>
+                        {% for device in devices %}
+                            <option value="{{ device.id }}">{{ device.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div onclick="add_device()" class="add-device">
+                        +
+                    </div>
+                </div>
+                <div id="chosen-devices" class="chosen-devices">
+                    {% for device in Pattern_Device %}
+
+                        <div class="chosen-device-block" id="chosen-device-block_{{ forloop.counter }}">
+                            <input class="chosen-device" readonly="" id="chosen_device_{{ forloop.counter }}" value="{{ device.device_id.name }}">
+                            <input name="chosen_device_{{ forloop.counter }}" type="hidden" value="{{ device.device_id.id }}">
+                            <div class="chosen-device-button">
+                                <p id="del-chosen-device-block_{{ forloop.counter }}" onclick="DeleteDevice('del-chosen-device-block_{{ forloop.counter }}')">✕</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="person-block" class="person-block">
+            {% for employee in Pattern_Employee %}
+                <div class="person" id="person_{{ forloop.counter }}">
+                    <div class="input-block">
+                        <p>Сотрудник:</p>
+                        <input type="text" class="fio" list="employee" name="employee_{{ forloop.counter }}" value="{{ employee.employee_id }}">
+                    </div>
+                    <div class="button-block">
+                        <p class="delete-person" title="Убрать строку" onclick="DeletePerson('person_{{ forloop.counter }}')">✕</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </form>
+        <button id="add-person-button" class="add-person-button" onclick="add_person()" title="Добавить сотрудника"> + </button>
+    </div>
+</div>
+
+{% endblock %}

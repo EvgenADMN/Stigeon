@@ -1,0 +1,75 @@
+{% extends 'patterns/layout.html' %}
+
+{% block title %} Причины прогулов {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="absenses">
+
+<h2>Причины пропусков</h2>
+
+    <select id="menu-absense" class="menu-absense">
+        <option value="create" selected>Создать</option>
+        <option value="change">Изменить</option>
+        <option value="delete">Удалить</option>
+    </select>
+
+<form method="post" id="add-absense" class="add-absense">
+    {% csrf_token %}
+    <h3>Создать причину пропуска</h3>
+    <div class="input">
+        <input name="add-absense" type="hidden">
+        <p>Название:</p>
+        <input required name="name" type="text">
+    </div>
+    <button>Создать</button>
+</form>
+
+<form method="post" id="edit-absense" class="edit-absense">
+    {% csrf_token %}
+    <h3>Изменить причину пропуска</h3>
+    <select name="editable-absense">
+        <option selected disabled>Выберите причину пропуска</option>
+        {% for absense in absenses %}
+            <option value="{{ absense.id }}">{{ absense.name }}</option>
+        {% endfor %}
+    </select>
+    <div class="input">
+        <input name="edit-absense" type="hidden">
+        <p>Новое название</p>
+        <input required name="name" type="text">
+    </div>
+    <button>Изменить</button>
+</form>
+
+<form method="post" id="delete-absense" class="delete-absense">
+    {% csrf_token %}
+    <h3>Удалить причину пропуска</h3>
+    <input name="delete-absense" type="hidden">
+    <select name="deletable-absense">
+        <option selected disabled>Выберите причину пропуска</option>
+        {% for absense in absenses %}
+            <option value="{{ absense.id }}">{{ absense.name }}</option>
+        {% endfor %}
+    </select>
+    <button>Удалить</button>
+</form>
+
+    <table>
+        <tr>
+            <th>Созданные ранее:</th>
+        </tr>
+        {% for absense in absenses %}
+        <tr>
+            <td>{{ absense }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

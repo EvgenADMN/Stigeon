@@ -1,0 +1,163 @@
+<div class="content">
+
+    <div id="connect"  class="connect">
+        <h2>Настройки подключения</h2>
+        <form method="post" class="connect-form">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>IP адрес:</th>
+                    <th><input type="text" name="host" class="form-control" autocomplete="off" required></th>
+                </tr>
+                <tr>
+                    <th>Порт:</th>
+                    <th><input type="text" name="port" class="form-control" autocomplete="off" required></th>
+                </tr>
+                <tr>
+                    <th>Логин:</th>
+                    <th><input type="text" name="login" class="form-control" autocomplete="off" required></th>
+                </tr>
+                <tr>
+                    <th>Пароль:</th>
+                    <th><input type="password" name="password" class="form-control" autocomplete="off" required></th>
+                </tr>
+                <tr>
+                    <th>Название SDK:</th>
+                    <th><input type="text" name="sdk_name" class="form-control" autocomplete="off" required></th>
+                </tr>
+            </table>
+            <input type="hidden" name="action" value="save-connection"><button class="save-connection">Сохранить</button>
+        </form>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="check-connection"><button class="check-connection">Проверить подключение</button>
+        </form>
+    </div>
+
+    <div id="get-devices" class="get-devices">
+        <h2>Получить список устройств</h2>
+        <a href="{% url 'get_devices' %}"><button class="get-device-button"> Получить </button></a>
+
+
+        {% if devices %}
+        <div class="select-checkbox-buttons">
+            <button class="mark-button" onclick="select_checkbox()">Выделить все</button>
+            <button class="mark-button" onclick="clear_checkbox()">Снять выделение</button>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <button class="delete">Удалить</button>
+            <input type="hidden" name="delete_selected_devices" value="">
+            <table>
+                <tr>
+                    <th></th>
+                    <th> Имя </th>
+                    <th> IP </th>
+                    <th> Шлюз </th>
+                    <th> Маска </th>
+                    <th> Мак </th>
+                    <th> Внутренний ID </th>
+                    <th></th>
+                </tr>
+                {% for elem in devices %}
+                    <tr>
+                        <td> <input type="checkbox" class="{{ elem.id }}" name="checkbox_{{ elem.id }}" value="{{ elem.id }}" > </td>
+                        <td> {{ elem.name }} </td>
+                        <td> {{ elem.host }} </td>
+                        <td> {{ elem.gateway }} </td>
+                        <td> {{ elem.netmask }} </td>
+                        <td> {{ elem.mac }} </td>
+                        <td> {{ elem.id_internal }} </td>
+                        <td><a href="{% url 'delete_device' device_id=elem.id %}" class="delete_device"><p>X</p></a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </form>
+        {% else %}
+
+            <h3>Список устройств пуст</h3>
+
+        {% endif %}
+    </div>
+
+    <div id="get-employees" class="get-employees">
+
+        <h2>Получить список людей</h2>
+        <a href="{% url 'get_employees' %}"><button class="get-device-button"> Получить </button></a>
+
+        {% if employees %}
+
+        <div class="select-checkbox-buttons">
+            <button class="mark-button" onclick="select_checkbox()">Выделить все</button>
+            <button class="mark-button" onclick="clear_checkbox()">Снять выделение</button>
+        </div>
+         <form method="post">
+            {% csrf_token %}
+            <button class="delete">Удалить</button>
+            <input type="hidden" name="delete_selected_employees" value="">
+            <table>
+                <tr>
+                    <th></th>
+                    <th> Фамилия </th>
+                    <th> Имя </th>
+                    <th> Отчество </th>
+                    <th> Внутренний ID </th>
+                    <th></th>
+                </tr>
+                {% for elem in employees %}
+                    <tr>
+                        <td> <input type="checkbox" class="{{ elem.id }}" name="checkbox_{{ elem.id }}" value="{{ elem.id }}" > </td>
+                        <td> {{ elem.last_name }} </td>
+                        <td> {{ elem.first_name }} </td>
+                        <td> {{ elem.middle_name }} </td>
+                        <td> {{ elem.id_internal }} </td>
+                        <td><a href="{% url 'delete_employee' employee_id=elem.id %}" class="delete_employee"><p>X</p></a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </form>
+        {% else %}
+
+            <h3>Список устройств пуст</h3>
+
+        {% endif %}
+
+
+    </div>
+
+    <div id="colors" class="colors">
+
+        <h2>Настройка цветов таблицы</h2>
+        <p class="advice">Советую выбирать светлые тона (розовый вместо красного, голубой вместо синего и т.д.),<br>
+            так как на их фоне лучше читается черный цвет шрифта</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="colors" value="">
+            <div class="setting">
+                <p>Пропуск: </p>
+                <input type="color" name="absenteeism" value="{{ colors.absenteeism }}">
+            </div>
+            <div class="setting">
+                <p>Опоздание: </p>
+                <input type="color" name="lateness" value="{{ colors.lateness }}">
+            </div>
+            <div class="setting">
+                <p>Ранний уход: </p>
+                <input type="color" name="early" value="{{ colors.early }}">
+            </div>
+            <div class="setting">
+                <p>Опоздание и ранний уход: </p>
+                <input type="color" name="lateness_early" value="{{ colors.lateness_early }}">
+            </div>
+            <div class="setting">
+                <p>Пропуск по уважительной причине: </p>
+                <input type="color" name="purpose" value="{{ colors.purpose }}">
+            </div>
+            <button>Сохранить</button>
+        </form>
+
+    </div>
+</div>

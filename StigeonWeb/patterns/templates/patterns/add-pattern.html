@@ -1,0 +1,59 @@
+<datalist id="employee">
+    {% for employee in employees_list %}
+        <option value="{{ employee }}"></option>
+    {% endfor %}
+</datalist>
+
+<datalist id="chosen-devices-datalist">
+
+</datalist>
+
+<h2>Создать шаблон</h2>
+
+<form method="post">
+{% csrf_token %}
+<button class="new-pattern">Сохранить</button>
+<div class="properties">
+    <div class="properties-name">
+        <p>Название</p>
+        <input type="text" autocomplete="off" class="name" name="name" required>
+        <p>Описание</p>
+        <textarea name="description" class="description" placeholder="Добавьте описание шаблона. Можно оставить пустым..."></textarea>
+    </div>
+    <div class="properties-device">
+        <p>Устройство</p>
+        <div class="choose-device">
+            <select id="device_id" class="device_id" name="device_id">
+                <option disabled selected id="disabled">Выберите считыватель</option>
+                {% for device in devices %}
+                    <option value="{{ device.id }}">{{ device.name }}</option>
+                {% endfor %}
+            </select>
+            <div onclick="add_device()" class="add-device">
+                +
+            </div>
+        </div>
+        <div id="chosen-devices" class="chosen-devices">
+
+        </div>
+
+    </div>
+</div>
+
+
+<div id="person-block" class="person-block">
+    <div class="person" id="person_1">
+
+        <div class="input-block">
+            <p>Сотрудник:</p>
+            <input type="text" class="fio" list="employee" name="employee_1">
+        </div>
+
+        <div class="button-block">
+            <p class="delete-person" title="Убрать строку" onclick="DeletePerson('person_1')">✕</p>
+        </div>
+
+    </div>
+</div>
+</form>
+<button id="add-person-button" class="add-person-button" onclick="add_person()" title="Добавить сотрудника"> + </button>

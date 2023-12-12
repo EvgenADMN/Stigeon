@@ -1,0 +1,68 @@
+{% extends 'schedule/layout.html' %}
+{% load static %}
+
+{% block title %} Получить график работы {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+<div class="schedule">
+    <h3 id="header">Заполните таблицу</h3>
+
+    <form method="post" id="patterns-table" class="patterns-table">
+        {% csrf_token %}
+        <input type="hidden" name="patterns-table">
+        <input type="hidden" name="devices" value="">
+        <div class="table">
+            <div class="names">
+                <div class="person"></div>
+                {% for person in persons %}
+                    <div class="person">
+                        <p>
+                            {{ person }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="dates">
+                <div class="days">
+                    {% for str_day, day in days.items %}
+                        <div class="day"><p>{{ day }}</p></div>
+                    {% endfor %}
+                </div>
+                <div class="times">
+                    {% for person, person_str in persons.items %}
+                        <div class="time-block">
+                            {% for str_day, day in days.items %}
+                                <div class="time">
+                                    <select name="graph_{{ person.id }}_{{ str_day }}">
+                                        {% for period in Periods %}
+                                            <option value="{{ period.id }}">{{ period.time_from }}-{{ period.time_to }}</option>
+                                        {% endfor %}
+                                        {% for absense in Absenses %}
+                                            <option value="abs_{{ absense.id }}">{{ absense.name }}</option>
+                                        {% endfor %}
+                                        <option value="dayoff" selected>Выходной</option>
+                                    </select>
+                                   <!-- <input name="time_from_{{ person.id }}_{{ day }}" class="time-input" type="time"><input name="time_to_{{ person.id }}" class="time-input" type="time"> -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+        <button class="get-button" onclick="Loading()">Получить график</button>
+    </form>
+    <div id="loading" class="loading">
+        <h2>Обращение к серверу Perco</h2>
+        <h3>Пожалуйста, не покидайте страницу!</h3>
+        <p>Запрос к серверу и формирование таблицы может занять несколько минут.
+            Чем больше в шаблоне устройств и дней, тем больше времени потребуется для обработки запроса</p>
+        <img src="{% static 'schedule/img/loading.gif' %}">
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+<div class="main-header">
+    <div class="logo">
+        <img class="logo-img" src="{% static 'main/img/stigeon.png' %}">
+    </div>
+    <div class="button-bar">
+        <a href="{% url 'main_page' %}"><button class="main-header-button">Главная страница</button></a>
+        <a href="{% url 'schedule' %}"><button class="main-header-button">Получить таблицу</button></a>
+        <a href="{% url 'periods' %}"><button class="main-header-button">Временные промежутки</button></a>
+        <a href="{% url 'absenses' %}"><button class="main-header-button">Прогулы / Пропуски</button></a>
+
+        <div class="patterns-header-button">
+            <button onclick="DropdownPatterns()" class="main-header-button patterns-dropdown-button">Шаблоны</button>
+            <div id="patterns" class="dropdown">
+                <a href="{% url 'patterns-add' %}">Создать</a>
+                <a href="{% url 'patterns-edit-menu' %}">Редактировать</a>
+                <a href="{% url 'patterns-del' %}">Удалить</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="admin-button-bar">
+        <a href="{% url 'settings' %}"><button class="admin-button">Настройки</button></a>
+    </div>
+
+
+</div>

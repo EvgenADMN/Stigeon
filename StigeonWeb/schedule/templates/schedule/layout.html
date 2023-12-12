@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/header.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/page.css'%}">
+    <link rel="stylesheet" href="{% static 'schedule/css/content.css'%}">
+    <script defer src="{% static 'schedule/js/schedule.js' %}"></script>
+    <script defer src="{% static 'main/js/dropdown_patterns.js' %}"></script>
+</head>
+<body>
+
+    {% include 'main/header.html' %}
+
+    {% if alert != '' %}
+    <script>alert({{alert}})</script>
+    {% endif %}
+
+    <div class="page">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

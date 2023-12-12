@@ -1,0 +1,74 @@
+{% extends 'schedule/layout.html' %}
+
+{% block title %} Получить график работы {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="schedule">
+    <form class="result">
+        <h3>Графики посещения</h3>
+
+        <div class="result-table">
+            <div class="result-persons">
+                <div class="result-person">
+
+                </div>
+                {% for person in persons %}
+                    <div class="result-person">
+                        {{ person }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="result-times">
+                <div class="result-days-row">
+                    {% for str_day, day in days.items %}
+                    <div class="day">
+                        {{ day }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% for person in persons %}
+                <div class="result-times-row">
+                    {% for str_day, day in days.items %}
+                    <div class="result-time">
+                        <div class="sch-time">
+                            <div class="sch-time-from">
+                                09:00
+                            </div>
+                            <div class="sch-time-to">
+                                18:00
+                            </div>
+                        </div>
+                        <div class="fact-time">
+                            <div class="fact-time-from">
+                                09:12
+                            </div>
+                            <div class="fact-time-to">
+                                19:02
+                            </div>
+                        </div>
+                        <div class="summary">
+                                Popa v jope
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </form>
+    <form method="post" class="export">
+        {% csrf_token %}
+        <input type="hidden" name="export">
+        <button>Экспорт</button>
+    </form>
+</div>
+
+{% endblock %}

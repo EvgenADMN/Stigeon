@@ -1,0 +1,187 @@
+.settings .content {
+    height: 93vh;
+    padding-left: 15vw;
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .connect table {
+    width: 25vw;
+}
+
+.settings .connect .form-control {
+    height: 2vh;
+    border-radius: 8px;
+    border: solid grey 1px;
+}
+
+.settings .save-connection {
+    width: 100%;
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.settings .check-connection {
+    min-width: 250px;
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 1.7vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.settings .get-devices {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .get-devices .get-device-button {
+    width: 30vw;
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.settings .get-devices .mark-button {
+    width: 15vw;
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 1.7vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 1vh;
+}
+
+.settings .get-devices .delete {
+    background-color: #d1d1d1;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 1vh;
+}
+
+.settings .get-devices table {
+    width: 50vw;
+    border-collapse: collapse;
+}
+
+.settings .get-devices tr {
+    border-bottom: solid black 1px;
+}
+
+.settings .get-employees {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .get-employees .get-device-button {
+    width: 30vw;
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.settings .get-employees .mark-button {
+    width: 15vw;
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 1.7vh;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 1vh;
+}
+
+.settings .get-employees .delete {
+    background-color: #d1d1d1;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 1vh;
+}
+
+.settings .get-employees table {
+    width: 50vw;
+    border-collapse: collapse;
+}
+
+.settings .get-employees tr {
+    border-bottom: solid black 1px;
+}
+
+.settings .colors {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .colors form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings .colors p {
+    margin: 0;
+}
+
+.settings .colors .setting {
+    display: flex;
+    width: 15vw;
+    margin-bottom: 3vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings .colors .advice {
+    margin-bottom: 4vh;
+}
+
+.settings a {
+    text-decoration: none;
+    color: black;
+}

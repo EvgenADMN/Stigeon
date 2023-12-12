@@ -1,0 +1,36 @@
+body {
+    padding 0;
+    margin: 0;
+}
+
+.main-page {
+    padding-top: 8vh;
+}
+
+.main-page .menu {
+    height: 92vh;
+    width: 15vw;
+    padding-top: 2vh;
+    background-color: #f3f3ff;
+    border-right: solid black 1px;
+    position: fixed;
+    top: 7vh;
+    overflow: hidden;
+}
+
+.main-page .content {
+    padding-left: 17vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-page .content .instruction-block {
+    width: 90%
+    display: flex;
+    flex-direction: column;
+}
+

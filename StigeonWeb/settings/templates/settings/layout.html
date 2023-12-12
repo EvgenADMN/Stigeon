@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/header.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/page.css'%}">
+    <link rel="stylesheet" href="{% static 'settings/css/menu.css'%}">
+    <link rel="stylesheet" href="{% static 'settings/css/content.css'%}">
+    <script defer src="{% static 'settings/js/settings.js' %}"></script>
+    <script defer src="{% static 'main/js/dropdown_patterns.js' %}"></script>
+</head>
+<body>
+
+    {% include 'main/header.html' %}
+
+    <div class="page">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

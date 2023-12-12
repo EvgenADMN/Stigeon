@@ -1,0 +1,17 @@
+{% extends 'patterns/layout.html' %}
+
+{% block title %} Шаблоны {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="patterns">
+    <div class="add">
+        {% include 'patterns/add-pattern.html' %}
+    </div>
+</div>
+
+{% endblock %}

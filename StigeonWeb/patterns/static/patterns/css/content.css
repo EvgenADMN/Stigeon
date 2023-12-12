@@ -1,0 +1,659 @@
+.patterns {
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.patterns .add form {
+    width: 60vw;
+}
+
+.patterns .add .new-pattern {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.patterns .add .properties {
+    display: flex;
+    height: 30vh;
+    width: 60vw;
+    margin-right: 0;
+   /* background-color: #5a5a5a; */
+}
+
+.patterns .add .properties-name {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding-left: 0;
+    padding-right: 1vw;
+    box-sizing: border-box;
+}
+
+.patterns .add .description {
+    height: 14vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    margin: 0;
+    resize: none;
+}
+
+.patterns .add .properties-device {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding-left: 1vw;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.patterns .add .choose-device {
+    display: flex;
+}
+
+.patterns .add .add-device {
+    margin-left: 1vw;
+    height: 3vh;
+    width: 3vw;
+    border-radius: 10px;
+    background-color: #d1d1d1;
+    border: solid #969696 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 3.5vh;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.patterns .add .chosen-devices {
+    margin-top: 2vh;
+    height: 18vh;
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    overflow-y:auto;
+}
+
+.patterns .add .chosen-device-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.patterns .add .chosen-device-button {
+
+}
+
+.patterns .add .chosen-device-button p {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.patterns .add .chosen-device {
+    width: 90%;
+    margin-bottom: .5vh;
+    border: solid #969696 1px;
+    background-color: buttonface;
+    border-radius: 5px;
+}
+
+
+.patterns .add .name {
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+}
+
+.patterns .add .device_id {
+    width: 26vw;
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+    cursor: pointer;
+}
+
+.patterns .add .person {
+    background-color: #d1d1d1;
+    height: 5vh;
+    width: 60vw;
+    margin: 2vh;
+    margin-left: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: solid #969696 1px;
+}
+
+.patterns .add .input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: 27vw;
+}
+
+.patterns .add .fio {
+    width: 20vw;
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+}
+
+.patterns .add .button-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    font-size: 4vh;
+}
+
+.patterns .add .delete-person {
+    cursor: pointer;
+}
+
+.patterns .add .add-person-button {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 4vh;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 5vh;
+}
+
+.patterns .edit form {
+    width: 60vw;
+}
+
+.patterns .edit .new-pattern {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.patterns .edit .properties {
+    display: flex;
+    height: 30vh;
+    width: 60vw;
+    margin-right: 0;
+   /* background-color: #5a5a5a; */
+}
+
+.patterns .edit .properties-name {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding-left: 0;
+    padding-right: 1vw;
+    box-sizing: border-box;
+}
+
+.patterns .edit .description {
+    height: 14vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    margin: 0;
+    resize: none;
+}
+
+.patterns .edit .properties-device {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding-left: 1vw;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.patterns .edit .choose-device {
+    display: flex;
+}
+
+.patterns .edit .add-device {
+    margin-left: 1vw;
+    height: 3vh;
+    width: 3vw;
+    border-radius: 10px;
+    background-color: #d1d1d1;
+    border: solid #969696 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 3.5vh;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.patterns .edit .chosen-devices {
+    margin-top: 2vh;
+    height: 18vh;
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    overflow-y:auto;
+}
+
+.patterns .edit .chosen-device-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.patterns .edit .chosen-device-button {
+
+}
+
+.patterns .edit .chosen-device-button p {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.patterns .edit .chosen-device {
+    width: 90%;
+    margin-bottom: .5vh;
+    border: solid #969696 1px;
+    background-color: buttonface;
+    border-radius: 5px;
+}
+
+
+.patterns .edit .name {
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+}
+
+.patterns .edit .device_id {
+    width: 26vw;
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+    cursor: pointer;
+}
+
+.patterns .edit .person {
+    background-color: #d1d1d1;
+    height: 5vh;
+    width: 60vw;
+    margin: 2vh;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: solid #969696 1px;
+}
+
+.patterns .edit .input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: 27vw;
+}
+
+.patterns .edit .fio {
+    width: 20vw;
+    height: 3vh;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+}
+
+.patterns .edit .button-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    font-size: 4vh;
+}
+
+.patterns .edit .delete-person {
+    cursor: pointer;
+}
+
+.patterns .edit .add-person-button {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 4vh;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 5vh;
+}
+
+.patterns .edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.patterns .edit form {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.patterns .edit select {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.patterns .edit .description-menu {
+    height: 10vh;
+    width: 20vw;
+    max-height: 10vh;
+    overflow: auto;
+    border: solid black 1px;
+    border-radius: 15px;
+    margin: 2vh;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+.patterns .edit .description-menu p {
+    margin: 0;
+}
+
+.patterns .edit button {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.periods {
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periods table {
+    width: 20vw;
+    height: 10px;
+    margin-top: 3vh;
+    border: solid #969696 1px;
+    border-radius: 15px;
+    outline: none;
+}
+
+.periods th {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.periods td {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.periods .menu {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 2vh;
+}
+
+.periods .add-period {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periods .edit-period {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periods .delete-period {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periods p {
+    display: inline-flex;
+}
+
+.periods .inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20vw;
+    margin-bottom: 2vh;
+}
+
+.periods .inputs input {
+    height: 3vh;
+    width: 7vw;
+}
+
+.periods button {
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.periods select {
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 1.5vh;
+    text-align: center;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 2vh;
+}
+
+.absenses {
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.absenses table {
+    width: 20vw;
+    height: 10px;
+    margin-top: 3vh;
+    border: solid #969696 1px;
+    border-radius: 15px;
+    outline: none;
+}
+
+.absenses th {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.absenses td {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.absenses .menu-absense {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 2vh;
+}
+
+.absenses .add-absense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.absenses .edit-absense {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.absenses .delete-absense {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.absenses p {
+    display: inline-flex;
+}
+
+.absenses .inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20vw;
+    margin-bottom: 2vh;
+}
+
+.absenses .inputs input {
+    height: 3vh;
+    width: 7vw;
+}
+
+.absenses button {
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 2vh;
+    text-align: center;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.absenses select {
+    background-color: #d1d1d1;
+    height: 4vh;
+    font-size: 1.5vh;
+    text-align: center;
+    width: 20vw;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+    margin-bottom: 2vh;
+}

@@ -1,0 +1,35 @@
+.settings .menu {
+    height: 93vh;
+    width: 15vw;
+    padding-top: 2vh;
+    background-color: #f3f3ff;
+    border-right: solid black 1px;
+    position: fixed;
+    top: 7vh;
+    overflow: hidden;
+}
+
+.settings .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.settings .menu .item {
+    width: 14vw;
+    background-color: #4d4a8f;
+    border-radius: 8px;
+    outline: solid black 1px;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0.4vh;
+    cursor: pointer;
+    margin-bottom: 2vh;
+    box-sizing: border-box;
+}
+

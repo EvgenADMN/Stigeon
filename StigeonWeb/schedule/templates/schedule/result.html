@@ -1,0 +1,16 @@
+{% extends 'schedule/layout.html' %}
+
+{% block title %} Получить график работы {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="schedule">
+    <h2>График сформирован</h2>
+    <a href="{% url 'download' %}"><button class="get-button">Скачать</button></a>
+</div>
+
+{% endblock %}

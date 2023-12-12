@@ -1,0 +1,19 @@
+{% extends 'settings/layout.html' %}
+
+{% block title %} Настройки {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="settings">
+
+    {% include 'settings/menu.html' %}
+    {% include 'settings/content.html' %}
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Stigeon {% endblock %}
+
+{% block content %}
+
+<div class="main-page">
+    <div class="menu">
+        <h2>Оглавление</h2>
+        <div class="menu-list">
+            <div class="menu-item">
+                <a href="#main-about">Что такое Stigeon</a>
+            </div>
+            <div class="menu-item">
+                <a href="#main-settings">Первичные настройки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#main-periods">Временные промежутки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#main-absenses">Причины пропусков</a>
+            </div>
+            <div class="menu-item">
+                <a href="#main-patterns">Шаблоны</a>
+            </div>
+            <div class="menu-item">
+                <a href="#main-schedule">Получение таблицы</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Инструкция</h1>
+        <div class="instruction-block" id="main-about">
+            <h2>Что такое Stigeon</h2>
+            <p>Stigeon - это программа, предназначенная для сравнения теоретических и фактических графиков работы сотрудников.
+            Stigeon обращается напрямую к серверу СКУД, запрашивает и анализирует данные, полученные от считывателей (например, УРВ или турникет на КПП)
+            и возвращает excel таблицу, содержащую в себе информацию о расхождении упомянутых выше графиков работы.<br>
+            Д</p>
+        </div>
+
+        <div class="instruction-block" id="main-settings">
+            <h2>Первичные настройки</h2>
+            <p>Stigeon - это программа</p>
+        </div>
+
+        <div class="instruction-block" id="main-periods">
+            <h2>Временные промежутки</h2>
+            <p>Stigeon - это программа</p>
+        </div>
+
+        <div class="instruction-block" id="main-absenses">
+            <h2>Причины пропусков</h2>
+            <p>Stigeon - это программа</p>
+        </div>
+
+        <div class="instruction-block" id="main-patterns">
+            <h2>Шаблоны</h2>
+            <p>Stigeon - это программа</p>
+        </div>
+
+        <div class="instruction-block" id="main-schedule">
+            <h2>Получение таблицы</h2>
+            <p>Stigeon - это программа</p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

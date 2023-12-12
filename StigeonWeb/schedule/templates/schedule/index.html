@@ -1,0 +1,34 @@
+{% extends 'schedule/layout.html' %}
+
+{% block title %} Получить график работы {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="schedule">
+    <h2>Получить таблицу графиков</h2>
+    <div class="choice-field">
+        <form class="choice-field" method="post">
+            {% csrf_token %}
+            <div class="inputs">
+                <input class="input" id="date-from" name="date-from" type="date" required>
+                <input class="input" id="date-to" name="date-to" type="date" disabled required>
+                <select name="pattern" class="input" required>
+                    <option disabled selected>Выберите шаблон</option>
+                    {% for pattern in Patterns %}
+                    <option value="{{ pattern.id }}">{{ pattern }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+
+            <button class="get-button" id="get-button">Получить таблицу</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

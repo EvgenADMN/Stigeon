@@ -1,0 +1,79 @@
+{% extends 'patterns/layout.html' %}
+
+{% block title %} Временные промежутки {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="periods">
+<h2>Временные промежутки</h2>
+
+
+    <select id="menu" class="menu">
+        <option value="create" selected>Создать</option>
+        <option value="change">Изменить</option>
+        <option value="delete">Удалить</option>
+    </select>
+
+<form method="post" id="add-period" class="add-period">
+    {% csrf_token %}
+    <h3>Создать временной промежуток</h3>
+    <div class="inputs">
+        <input name="add-period" type="hidden">
+        <p>C</p>
+        <input required name="time-from" type="time">
+        <p>до</p>
+        <input required name="time-to" type="time">
+    </div>
+    <button>Создать</button>
+</form>
+
+<form method="post" id="edit-period" class="edit-period">
+    {% csrf_token %}
+    <h3>Изменить временной промежуток</h3>
+    <select name="editable-period">
+        <option selected disabled>Выберите временной промежуток</option>
+        {% for period in periods %}
+            <option value="{{ period.id }}">{{ period.time_from }}-{{period.time_to}}</option>
+        {% endfor %}
+    </select>
+    <div class="inputs">
+        <input name="edit-period" type="hidden">
+        <p>C</p>
+        <input required name="time-from" type="time">
+        <p>до</p>
+        <input required name="time-to" type="time">
+    </div>
+    <button>Изменить</button>
+</form>
+
+<form method="post" id="delete-period" class="delete-period">
+    {% csrf_token %}
+    <h3>Удалить временной промежуток</h3>
+    <input name="delete-period" type="hidden">
+    <select name="deletable-period">
+        <option selected disabled>Выберите временной промежуток</option>
+        {% for period in periods %}
+            <option value="{{ period.id }}">{{ period.time_from }}-{{period.time_to}}</option>
+        {% endfor %}
+    </select>
+    <button>Удалить</button>
+</form>
+
+    <table>
+        <tr>
+            <th>Созданные ранее:</th>
+        </tr>
+        {% for period in periods %}
+        <tr>
+            <td>{{ period }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

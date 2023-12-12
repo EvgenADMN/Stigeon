@@ -1,0 +1,49 @@
+{% extends 'patterns/layout.html' %}
+
+{% block title %} Шаблоны {% endblock %}
+
+{% block content %}
+
+{% if alert != '' %}
+    <script>alert('{{ alert }}')</script>
+{% endif %}
+
+<div class="patterns">
+    <datalist id="pattern-names">
+        {% for pattern in Patterns %}
+            <option class="pattern-name" value="{{ pattern.name }}"></option>
+        {% endfor %}
+    </datalist>
+    <datalist id="patterns-descriptions">
+        {% for pattern in Patterns %}
+            <option class="patterns-description" value="{{ pattern.description }}"></option>
+        {% endfor %}
+    </datalist>
+
+
+    <div class="edit">
+        <h2>Редактировать шаблон</h2>
+
+        <form method="post">
+        {% csrf_token %}
+
+            <select name="editable-item" id="edit-menu">
+                <option selected disabled>Выберите шаблон</option>
+                {% for pattern in Patterns %}
+                    <option value="{{ pattern.id }}">{{ pattern.name }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="description-menu">
+                <p id="desc-id"></p>
+            </div>
+
+            <button> Редактировать </button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+

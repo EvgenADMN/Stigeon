@@ -1,0 +1,214 @@
+.schedule {
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule .choice-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    height: 10vh;
+}
+
+.schedule .inputs {
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.schedule .input {
+    height: 3vh;
+    width: 19vw;
+    border-radius: 10px;
+    outline: none;
+    border: solid #969696 1px;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+}
+
+.schedule .get-button {
+    background-color: #d1d1d1;
+    height: 5vh;
+    font-size: 2vh;
+    width: 60vw;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid #969696 1px;
+}
+
+.schedule .patterns-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule .patterns-table .table {
+    display: flex;
+}
+
+.schedule .patterns-table .names {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.schedule .patterns-table p {
+    margin: 0;
+    padding: 0;
+
+}
+
+.schedule .patterns-table .person {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20vw;
+    height: 7vh;
+    border-top: solid black 1px;
+    margin-top: -1px;
+    border-right: solid black 1px;
+    margin-right: -1px;
+    border-left: solid black 1px;
+    margin-left: -1px;
+}
+
+.schedule .patterns-table .dates {
+    width: 60vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.schedule .patterns-table .days {
+    display: flex;
+    height: 7vh;
+}
+
+.schedule .patterns-table .day {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 12vw;
+    border-bottom: solid black 1px;
+    margin-bottom: -1px;
+    border-right: solid black 1px;
+    margin-right: -1px;
+    border-top: solid black 1px;
+}
+
+.schedule .patterns-table .day p {
+    width: 12vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.schedule .patterns-table .time-block {
+    display: flex;
+    height: 7vh;
+}
+
+.schedule .patterns-table .time {
+    display: flex;
+    flex-direction: column;
+    min-width: 12vw;
+    max-width: 12vw;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: solid black 1px;
+    margin-bottom: -1px;
+    border-right: solid black 1px;
+    margin-right: -1px;
+}
+
+.schedule .patterns-table select {
+    min-width: 10vw;
+    max-width: 10vw;
+    text-align: center;
+}
+
+.schedule .result-table {
+    display: flex;
+}
+
+.schedule .result-persons {
+    outline: solid black 1px;
+    width: 18vw;
+}
+
+.schedule .result-person {
+    display: flex;
+    height: 6vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.schedule .result-times {
+    outline: solid black 1px;
+    width: 50vw;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.schedule .result-days-row {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+}
+
+.schedule .result-times .day {
+    min-width: 12vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.schedule .result-times-row {
+    display: flex;
+    height: 6vh;
+}
+
+.schedule .result-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule .sch-time {
+    height: 2vh;
+    display: flex;
+    width: 12vw;
+    justify-content: space-around;
+}
+
+.schedule .fact-time {
+    height: 2vh;
+    display: flex;
+    width: 12vw;
+    justify-content: space-around;
+}
+
+.schedule .summary {
+    height: 2vh;
+    display: flex;
+    width: 12vw;
+    justify-content: space-around;
+}
+
+.schedule .loading {
+    width: 100vw;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+}
